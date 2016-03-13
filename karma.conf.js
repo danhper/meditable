@@ -1,4 +1,6 @@
-'use strict';
+'use strict'
+
+const assign = require('object-assign')
 
 module.exports = function (config) {
   config.set({
@@ -13,7 +15,7 @@ module.exports = function (config) {
     files: [
       'test/**/*-test.js'
     ],
-    webpack: Object.assign(require('./webpack.config'), {devtool: 'inline-source-map'}),
+    webpack: assign(require('./webpack.config'), {devtool: 'inline-source-map'}),
     webpackMiddleware: {
       noInfo: true
     },
@@ -23,5 +25,5 @@ module.exports = function (config) {
     },
     browsers: ['PhantomJS'],
     reporters: ['mocha']
-  });
-};
+  })
+}

@@ -1,19 +1,16 @@
 import {expect} from 'chai'
 
-import meditable from '..'
+import meditable from 'meditable'
 
-describe('meditable', function () {
+describe('meditable', () => {
   function makeContainer(html) {
     const div = document.createElement('div')
     div.innerHTML = html
     return div
   }
 
-  describe('fromHTML', function () {
-    describe('b tag', function () {
-    })
-
-    describe('complex document', function () {
+  describe('fromHTML', () => {
+    describe('complex document', () => {
       const html = require('./fixtures/dummy-1.html')
       const div = makeContainer(html)
 

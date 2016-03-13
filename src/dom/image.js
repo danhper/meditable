@@ -6,4 +6,8 @@ export default class Image extends LeafNode {
     this.source = source
     this.text = text
   }
+
+  get name() {
+    return 'Image'
+  }
 }

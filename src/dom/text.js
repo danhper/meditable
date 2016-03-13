@@ -5,4 +5,8 @@ export default class Text extends LeafNode {
     super()
     this.text = text
   }
+
+  get name() {
+    return 'Text'
+  }
 }

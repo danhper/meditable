@@ -5,15 +5,22 @@ export default class BaseFormatter {
     this.options = options || {}
   }
 
+  configure(options) {
+    assign(this.options, options)
+  }
+
   render(node, options) {
-    const capitalizedName = node.name[0].toUpperCase() + node.name.substring(1)
-    const method = `render${capitalizedName}`
+    const method = `render${node.name}`
     options = options || {depth: 0}
     options = assign({}, options, {depth: options.depth + 1})
     if (this[method]) {
       return this[method](node, options)
     }
     return this.fallbackRender(node)
+  }
+
+  renderNode(node, options) {
+    return this.renderChildren(node, options)
   }
 
   renderChildren(node, options) {

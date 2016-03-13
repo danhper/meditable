@@ -1,4 +1,6 @@
-'use strict';
+'use strict'
+
+const path = require('path')
 
 module.exports = {
   entry: {
@@ -18,5 +20,10 @@ module.exports = {
       test: /\.html$/,
       loader: 'html'
     }]
+  },
+  resolve: {
+    alias: {
+      meditable: path.resolve('src')
+    }
   }
-};
+}
